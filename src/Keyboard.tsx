@@ -36,7 +36,7 @@ type KeyboardProps = {
 
 export function Keyboard({ disabled = false, activeLetters, inactiveLetters, addGuessedLetter }: KeyboardProps) {
   return (
-    <div className='grid grid-cols-10 gap-2'>
+    <div className='grid grid-cols-5 md:grid-cols-10 gap-2'>
       {KEYS.map((key) => {
         const isActive = activeLetters.includes(key)
         const isInactive = inactiveLetters.includes(key)
