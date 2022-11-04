@@ -51,21 +51,19 @@ function App() {
     return () => document.removeEventListener('keypress', handler)
   }, [])
   return (
-    <div className='my-0 mx-auto flex max-w-3xl flex-col items-center gap-8'>
+    <div className=' mx-auto flex max-w-3xl flex-col items-center gap-8'>
       <div className='text-center text-3xl'>
         {isWinner && 'Winner! - Refresh to try again'}
         {isLoser && 'Loser! - Refresh to try again'}
       </div>
       <HangmanDrawing numberOfGuesses={incorrectLetters.length} />
       <HangmanWord reveal={isLoser} guessedLetters={guessedLetters} wordToGuess={wordToGuess} />
-      <div className='self-stretch'>
-        <Keyboard
-          disabled={isWinner || isLoser}
-          activeLetters={guessedLetters.filter((letter) => wordToGuess.includes(letter))}
-          inactiveLetters={incorrectLetters}
-          addGuessedLetter={addGuessedLetter}
-        />
-      </div>
+      <Keyboard
+        disabled={isWinner || isLoser}
+        activeLetters={guessedLetters.filter((letter) => wordToGuess.includes(letter))}
+        inactiveLetters={incorrectLetters}
+        addGuessedLetter={addGuessedLetter}
+      />
     </div>
   )
 }
