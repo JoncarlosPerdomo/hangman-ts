@@ -51,8 +51,8 @@ function App() {
     return () => document.removeEventListener('keypress', handler)
   }, [])
   return (
-    <div className=' mx-auto flex max-w-3xl flex-col items-center gap-8'>
-      <div className='text-center text-3xl'>
+    <div className='flex w-screen flex-col items-center gap-8'>
+      <div className='h-full text-center text-3xl'>
         {isWinner && 'Winner! - Refresh to try again'}
         {isLoser && 'Loser! - Refresh to try again'}
       </div>
