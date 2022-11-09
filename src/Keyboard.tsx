@@ -11,7 +11,7 @@ type KeyboardProps = {
 
 export function Keyboard({ disabled = false, activeLetters, inactiveLetters, addGuessedLetter }: KeyboardProps) {
   return (
-    <div className='self-stretch'>
+    <div>
       <div className='flex'>
         {FIRST_ROW.map((key) => {
           const isActive = activeLetters.includes(key)
